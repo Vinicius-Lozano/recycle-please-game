@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://8gh267eaa2e2"]
+
+[ext_resource type="PackedScene" uid="uid://cdijl1wncvnxv" path="res://scenes/game_manager.tscn" id="1_iywne"]
+[ext_resource type="PackedScene" uid="uid://cl23cede2qaap" path="res://scenes/platform.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://be5usefshj7wu" path="res://scenes/player.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://c6xm44tsqu4x7" path="res://scripts/trash_count.gd" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cxg61t3htox5m" path="res://scenes/collectaible.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ihu1ips336gv" path="res://scenes/saida.tscn" id="5_iywne"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
+
+[node name="game" type="Node2D" unique_id=2138792836]
+
+[node name="GameManager" parent="." unique_id=1267854876 instance=ExtResource("1_iywne")]
+unique_name_in_owner = true
+
+[node name="saida" parent="." unique_id=1111785848 instance=ExtResource("5_iywne")]
+position = Vector2(320, 1)
+next_scene = "uid://c24e57bpj10ah"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1383474922]
+
+[node name="TrashCount" type="Label" parent="CanvasLayer" unique_id=785729629]
+offset_left = 23.0
+offset_right = 101.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 28
+text = "Papel: 0 Vidro: 0 Plastico: 0 Metal: 0"
+script = ExtResource("3_p57ef")
+
+[node name="Player" parent="." unique_id=2057350693 instance=ExtResource("2_lnu2h")]
+position = Vector2(768, 624)
+JUMP_VELOCITY = -600.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1640855280]
+position = Vector2(0, -32)
+position_smoothing_enabled = true
+
+[node name="platforms" type="Node" parent="." unique_id=730521111]
+
+[node name="platform" parent="platforms" unique_id=1858118386 instance=ExtResource("1_yqjtg")]
+position = Vector2(343, 519)
+
+[node name="platform2" parent="platforms" unique_id=688838903 instance=ExtResource("1_yqjtg")]
+position = Vector2(924, 307.00003)
+rotation = 2.8797934
+
+[node name="platform3" parent="platforms" unique_id=200668773 instance=ExtResource("1_yqjtg")]
+position = Vector2(343, 278)
+
+[node name="platform4" parent="platforms" unique_id=681707996 instance=ExtResource("1_yqjtg")]
+position = Vector2(762, 457)
+
+[node name="platform5" parent="platforms" unique_id=456870180 instance=ExtResource("1_yqjtg")]
+position = Vector2(702, 647)
+
+[node name="platform6" parent="platforms" unique_id=1635603057 instance=ExtResource("1_yqjtg")]
+position = Vector2(774.99994, 119)
+rotation = -0.30659026
+
+[node name="platform7" parent="platforms" unique_id=1826649424 instance=ExtResource("1_yqjtg")]
+position = Vector2(462, 21)
+
+[node name="collectibles" type="Node" parent="." unique_id=1553542660]
+
+[node name="collectaible" parent="collectibles" unique_id=471681556 instance=ExtResource("4_lbhrr")]
+position = Vector2(1034, 228)
+
+[node name="collectaible2" parent="collectibles" unique_id=1986295783 instance=ExtResource("4_lbhrr")]
+position = Vector2(215, 223)
+
+[node name="collectaible3" parent="collectibles" unique_id=688111718 instance=ExtResource("4_lbhrr")]
+position = Vector2(902, 404)
+
+[node name="collectaible4" parent="collectibles" unique_id=1380181594 instance=ExtResource("4_lbhrr")]
+position = Vector2(218, 461)
+
+[node name="collectaible5" parent="collectibles" unique_id=321448700 instance=ExtResource("4_lbhrr")]
+position = Vector2(871, 27)
+
+[node name="borders" type="Node" parent="." unique_id=1651145605]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="borders" unique_id=1873706390]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D" unique_id=1212776738]
+position = Vector2(576, 649)
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="borders" unique_id=1588221784]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D2" unique_id=969352412]
+position = Vector2(0, 560)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="borders" unique_id=1529966197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D3" unique_id=1565924999]
+position = Vector2(1152, 528)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_lbhrr")

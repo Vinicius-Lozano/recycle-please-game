@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c24e57bpj10ah"]
+
+[ext_resource type="Texture2D" uid="uid://bubwnq07li1mm" path="res://sprites/trash_bin.png" id="1_5hae6"]
+[ext_resource type="Script" uid="uid://6cl12el6ntlh" path="res://scripts/trashbin.gd" id="2_icp1f"]
+[ext_resource type="PackedScene" uid="uid://c5e2l663ycnqv" path="res://scenes/recycle_bin.tscn" id="3_yai4t"]
+[ext_resource type="Script" uid="uid://c5qdtc0idu2qj" path="res://scripts/sorting_game_points.gd" id="4_qddv8"]
+[ext_resource type="Script" uid="uid://dfkm2njaolte1" path="res://scripts/button.gd" id="5_8l3ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hae6"]
+size = Vector2(528, 176)
+
+[node name="sortingMinigame" type="Node2D" unique_id=1785334965]
+
+[node name="bins" type="Node" parent="." unique_id=1975827117]
+
+[node name="recycleBin" parent="bins" unique_id=1964669360 instance=ExtResource("3_yai4t")]
+position = Vector2(287, -160)
+bin_type_choice = "metal"
+
+[node name="recycleBin2" parent="bins" unique_id=1100623400 instance=ExtResource("3_yai4t")]
+position = Vector2(-289, -160)
+
+[node name="recycleBin3" parent="bins" unique_id=1883597031 instance=ExtResource("3_yai4t")]
+position = Vector2(-97, -160)
+bin_type_choice = "glass"
+
+[node name="recycleBin4" parent="bins" unique_id=347346575 instance=ExtResource("3_yai4t")]
+position = Vector2(95, -160)
+bin_type_choice = "plastic"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=118396693]
+position = Vector2(0, 184)
+texture = ExtResource("1_5hae6")
+
+[node name="trashbin" type="Area2D" parent="." unique_id=875104316]
+position = Vector2(0, 184)
+script = ExtResource("2_icp1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trashbin" unique_id=924644459]
+shape = SubResource("RectangleShape2D_5hae6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=126256591]
+
+[node name="sortingGamePoints" type="Label" parent="." unique_id=2077621661]
+offset_left = -563.0
+offset_top = -316.0
+offset_right = -438.0
+offset_bottom = -277.0
+theme_override_font_sizes/font_size = 28
+text = "Pontos: 0"
+script = ExtResource("4_qddv8")
+
+[node name="resetButton" type="Button" parent="." unique_id=600770097]
+offset_left = 441.0
+offset_top = -266.0
+offset_right = 517.0
+offset_bottom = -235.0
+text = "Reiniciar"
+script = ExtResource("5_8l3ee")
