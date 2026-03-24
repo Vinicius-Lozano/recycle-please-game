@@ -1,20 +1,71 @@
 [gd_scene format=3 uid="uid://be5usefshj7wu"]
 
 [ext_resource type="Script" uid="uid://bn73xxrdlib4p" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bemuo8m7judw0" path="res://sprites/tampinha.png" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjrip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(66, 62.490067)
+size = Vector2(18.628838, 18.627161)
 
 [node name="Player" type="CharacterBody2D" unique_id=2057350693]
+floor_snap_length = 1.5
 script = ExtResource("1_3vyb7")
-JUMP_VELOCITY = -800.0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1849656092]
-offset_left = -19.0
-offset_top = -58.0
-offset_right = 19.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578650325]
+position = Vector2(1, -7)
+sprite_frames = SubResource("SpriteFrames_fjrip")
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821973958]
-position = Vector2(0, -29.000002)
+position = Vector2(-1, -8.662635)
 scale = Vector2(0.5869906, 0.9301079)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=136842111]
+position = Vector2(0, -8)
+position_smoothing_enabled = true

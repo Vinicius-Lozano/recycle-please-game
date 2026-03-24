@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dl0pdicw0g2h" path="res://scripts/saida.gd" id="1_wswpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1881"]
-size = Vector2(40, 77)
+size = Vector2(21.5, 40)
 
 [node name="saida" type="Area2D" unique_id=1111785848]
 script = ExtResource("1_wswpa")
@@ -14,9 +14,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -77.0
-offset_right = 20.0
+offset_left = -11.0
+offset_top = -40.0
+offset_right = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.20392157, 1, 1, 1)
@@ -28,15 +28,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -23.0
-offset_top = -98.0
+offset_top = -63.0
 offset_right = 24.0
-offset_bottom = -75.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "SAIDA"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442941518]
-position = Vector2(0, -38.5)
+position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_f1881")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

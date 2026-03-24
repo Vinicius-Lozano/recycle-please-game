@@ -10,6 +10,7 @@ var type = [
 	{'name': 'metal', 'sprite': 3, 'quantity': 0}
 ]
 var points = 0
+var IS_DRAGGING = null
 
 func add_trash(trash_name: String):
 	for item in type:

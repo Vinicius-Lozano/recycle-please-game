@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyrc781ghi40l"]
+
+[ext_resource type="Script" uid="uid://cyndu5d5dnruq" path="res://master_button.gd" id="1_3epbq"]
+
+[node name="MasterButton" type="Button" unique_id=623200087]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_3epbq")

@@ -20,7 +20,11 @@ func set_trash_type(data: Dictionary):
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			mouse_offset = position - get_global_mouse_position()
-			selected = true
+			if GameManager.IS_DRAGGING == null:
+				mouse_offset = position - get_global_mouse_position()
+				selected = true
+				GameManager.IS_DRAGGING = self
 		else:
-			selected = false
+			if selected:
+				selected = false
+				GameManager.IS_DRAGGING = null

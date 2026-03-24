@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://c1nply3iqwj3t" path="res://scripts/collectaible.gd" id="1_v8rbk"]
 [ext_resource type="Texture2D" uid="uid://7g0phatjbhnc" path="res://sprites/trash.png" id="2_rkajl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7v7w1"]
-radius = 10.526321
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7v7w1"]
 atlas = ExtResource("2_rkajl")
 region = Rect2(0, 0, 20, 20)
@@ -47,15 +44,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7v7w1"]
+radius = 3.289479
+
 [node name="collectaible" type="Area2D" unique_id=1986295783]
 script = ExtResource("1_v8rbk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466364279]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dsjd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356265116]
 position = Vector2(-7.6293945e-06, 9.536743e-07)
 scale = Vector2(1.52, 1.51316)
 shape = SubResource("CircleShape2D_7v7w1")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466364279]
-sprite_frames = SubResource("SpriteFrames_dsjd0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
