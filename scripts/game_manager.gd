@@ -4,13 +4,14 @@ signal  trash_collected
 signal  point_added
 # tipos de lixo
 var type = [
-	{'name': 'paper', 'sprite': 0, 'quantity': 0},
-	{'name': 'glass', 'sprite': 1, 'quantity': 0},
-	{'name': 'plastic', 'sprite': 2, 'quantity': 0},
-	{'name': 'metal', 'sprite': 3, 'quantity': 0}
+	{'name': 'paper', 'sprite': 0, 'quantity': 0, 'color': Color.BLUE},
+	{'name': 'glass', 'sprite': 1, 'quantity': 0, 'color': Color.GREEN},
+	{'name': 'plastic', 'sprite': 2, 'quantity': 0, 'color': Color.YELLOW},
+	{'name': 'metal', 'sprite': 3, 'quantity': 0, 'color': Color.RED}
 ]
 var points = 0
 var IS_DRAGGING = null
+var player_move_block: bool = false
 
 func add_trash(trash_name: String):
 	for item in type:

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://6gjarj842iks"]
+
+[ext_resource type="Script" uid="uid://b5mnmo3tv1xgj" path="res://scripts/thrash_counter_ui.gd" id="1_hp1sp"]
+[ext_resource type="Texture2D" uid="uid://dr52yp0007s1q" path="res://sprites/trashes.png" id="2_o7t0i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8udf"]
+atlas = ExtResource("2_o7t0i")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upd0u"]
+atlas = ExtResource("2_o7t0i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr53b"]
+atlas = ExtResource("2_o7t0i")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i06aw"]
+atlas = ExtResource("2_o7t0i")
+region = Rect2(32, 0, 32, 32)
+
+[node name="ThrashCounterUI" type="HBoxContainer" unique_id=1194732144]
+offset_right = 196.0
+offset_bottom = 32.0
+script = ExtResource("1_hp1sp")
+
+[node name="PaperGroup" type="HBoxContainer" parent="." unique_id=1448420057]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="PaperGroup" unique_id=1481004274]
+modulate = Color(8.085966e-06, 0.5568541, 0.88521475, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_p8udf")
+expand_mode = 3
+
+[node name="Qtd" type="Label" parent="PaperGroup" unique_id=2081162526]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "0"
+
+[node name="GlassGroup" type="HBoxContainer" parent="." unique_id=1695439563]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="GlassGroup" unique_id=1804053056]
+modulate = Color(0.1764706, 0.7294118, 0, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_upd0u")
+expand_mode = 3
+
+[node name="Qtd" type="Label" parent="GlassGroup" unique_id=1092613198]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "0"
+
+[node name="PlastGroup" type="HBoxContainer" parent="." unique_id=2057157721]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="PlastGroup" unique_id=2007376163]
+modulate = Color(0.907794, 0.96906847, 0, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_sr53b")
+expand_mode = 3
+
+[node name="Qtd" type="Label" parent="PlastGroup" unique_id=994644699]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "0"
+
+[node name="MetalGroup" type="HBoxContainer" parent="." unique_id=694687409]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MetalGroup" unique_id=1429372803]
+modulate = Color(1, 0.36127588, 0.35190412, 1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_i06aw")
+
+[node name="Qtd" type="Label" parent="MetalGroup" unique_id=1929469267]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "0"

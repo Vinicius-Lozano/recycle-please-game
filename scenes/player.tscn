@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bn73xxrdlib4p" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bemuo8m7judw0" path="res://sprites/tampinha.png" id="2_g2els"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(18.628838, 18.627161)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
 region = Rect2(0, 0, 32, 32)
@@ -49,23 +52,21 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(18.628838, 18.627161)
-
 [node name="Player" type="CharacterBody2D" unique_id=2057350693]
 floor_snap_length = 1.5
 script = ExtResource("1_3vyb7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578650325]
-position = Vector2(1, -7)
-sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821973958]
 position = Vector2(-1, -8.662635)
 scale = Vector2(0.5869906, 0.9301079)
 shape = SubResource("RectangleShape2D_g2els")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=578650325]
+position = Vector2(1, -7)
+sprite_frames = SubResource("SpriteFrames_fjrip")
+animation = &"jump"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=136842111]
 position = Vector2(0, -8)
+limit_bottom = 300
 position_smoothing_enabled = true

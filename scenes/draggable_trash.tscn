@@ -1,30 +1,27 @@
 [gd_scene format=3 uid="uid://d1yde7lsrkd5d"]
 
 [ext_resource type="Script" uid="uid://cugv81ofkqf6h" path="res://scripts/draggable_trash.gd" id="1_uyx7a"]
-[ext_resource type="Texture2D" uid="uid://7g0phatjbhnc" path="res://sprites/trash.png" id="1_ytffx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uyx7a"]
-atlas = ExtResource("1_ytffx")
-region = Rect2(0, 0, 20, 20)
+[ext_resource type="Texture2D" uid="uid://c8etfletfdqvn" path="res://sprites/trashes_big.png" id="2_uyx7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5lqv"]
-atlas = ExtResource("1_ytffx")
-region = Rect2(20, 0, 20, 20)
+atlas = ExtResource("2_uyx7a")
+region = Rect2(0, 72, 72, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geqra"]
-atlas = ExtResource("1_ytffx")
-region = Rect2(0, 20, 20, 20)
+atlas = ExtResource("2_uyx7a")
+region = Rect2(0, 0, 72, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gtewl"]
-atlas = ExtResource("1_ytffx")
-region = Rect2(20, 20, 20, 20)
+atlas = ExtResource("2_uyx7a")
+region = Rect2(72, 72, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr1fu"]
+atlas = ExtResource("2_uyx7a")
+region = Rect2(72, 0, 72, 72)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xr1fu"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uyx7a")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s5lqv")
 }, {
@@ -33,6 +30,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gtewl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr1fu")
 }],
 "loop": true,
 "name": &"default",
@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f4t68"]
-radius = 11.0
+radius = 22.0
 
 [node name="draggableTrash" type="Area2D" unique_id=1117563939]
 script = ExtResource("1_uyx7a")

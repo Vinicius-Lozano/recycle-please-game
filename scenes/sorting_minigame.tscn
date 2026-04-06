@@ -15,6 +15,15 @@ size = Vector2(215, 39.75)
 tile_map_data = PackedByteArray("AAADAAoAAgAIAAYAAAAAAAoAAgAHAAYAAAABAAoAAgAIAAUAAAACAAoAAgAIAAUAAAAEAAoAAgAIAAUAAAAFAAoAAgAIAAUAAAAGAAoAAgAIAAUAAAAHAAoAAgAIAAUAAAAIAAoAAgAIAAUAAAAJAAoAAgAIAAUAAAAKAAoAAgAIAAUAAAALAAoAAgAIAAUAAAAMAAoAAgAIAAUAAAANAAoAAgAIAAUAAAAOAAoAAgAIAAYAAAAPAAoAAgAIAAUAAAAQAAoAAgAIAAUAAAARAAoAAgAIAAUAAAASAAoAAgAIAAUAAAATAAoAAgAKAAUAAAA=")
 tile_set = ExtResource("1_8l3ee")
 
+[node name="resetButton" type="Button" parent="." unique_id=600770097]
+offset_left = 273.0
+offset_top = 5.0
+offset_right = 315.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 8
+text = "Reiniciar"
+script = ExtResource("5_8l3ee")
+
 [node name="bins" type="Node" parent="." unique_id=1975827117]
 
 [node name="recycleBin" parent="bins" unique_id=1964669360 instance=ExtResource("3_yai4t")]
@@ -39,19 +48,9 @@ script = ExtResource("2_icp1f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trashbin" unique_id=924644459]
 shape = SubResource("RectangleShape2D_5hae6")
 
-[node name="sortingGamePoints" type="Label" parent="." unique_id=2077621661]
-offset_left = -563.0
-offset_top = -316.0
-offset_right = -438.0
-offset_bottom = -277.0
-theme_override_font_sizes/font_size = 28
+[node name="sortingGamePoints" type="Label" parent="." unique_id=985151457]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 7
 text = "Pontos: 0"
 script = ExtResource("4_qddv8")
-metadata/_edit_use_anchors_ = true
-
-[node name="resetButton" type="Button" parent="." unique_id=600770097]
-offset_right = 42.0
-offset_bottom = 20.0
-theme_override_font_sizes/font_size = 8
-text = "Reiniciar"
-script = ExtResource("5_8l3ee")

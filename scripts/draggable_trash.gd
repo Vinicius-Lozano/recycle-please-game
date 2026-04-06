@@ -16,6 +16,11 @@ func followMouse():
 func set_trash_type(data: Dictionary):
 	drag_type = data['name']
 	sprite.frame = data['sprite']
+	
+	#colorir o sprite
+	var item_color: Color = data['color']
+	var soft_color: Color = Color.WHITE.lerp(item_color, 0.4)
+	sprite.modulate = soft_color
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
