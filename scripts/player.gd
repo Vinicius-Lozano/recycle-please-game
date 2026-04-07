@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+class_name Player
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 
