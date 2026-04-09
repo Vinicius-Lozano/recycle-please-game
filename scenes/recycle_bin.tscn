@@ -1,41 +1,41 @@
 [gd_scene format=3 uid="uid://c5e2l663ycnqv"]
 
 [ext_resource type="Script" uid="uid://dp0baxdlqyr70" path="res://scripts/recycle_bin.gd" id="1_mgr5a"]
-[ext_resource type="Texture2D" uid="uid://bci08chmjkeh0" path="res://sprites/recycle_bin.png" id="2_q7cin"]
+[ext_resource type="Texture2D" uid="uid://105j64ugvbug" path="res://sprites/trashes_bin.png" id="2_mgr5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_576ct"]
 size = Vector2(38, 57)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7cin"]
+atlas = ExtResource("2_mgr5a")
+region = Rect2(34, 0, 34, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_576ct"]
+atlas = ExtResource("2_mgr5a")
+region = Rect2(68, 0, 34, 69)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1c6vu"]
-atlas = ExtResource("2_q7cin")
-region = Rect2(0, 0, 128, 192)
+atlas = ExtResource("2_mgr5a")
+region = Rect2(0, 0, 34, 69)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbk50"]
-atlas = ExtResource("2_q7cin")
-region = Rect2(128, 0, 128, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_84s78"]
-atlas = ExtResource("2_q7cin")
-region = Rect2(256, 0, 128, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_86st7"]
-atlas = ExtResource("2_q7cin")
-region = Rect2(384, 0, 128, 192)
+atlas = ExtResource("2_mgr5a")
+region = Rect2(0, 69, 34, 69)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cuuvt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_q7cin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_576ct")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1c6vu")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xbk50")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_84s78")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_86st7")
 }],
 "loop": true,
 "name": &"default",
@@ -51,7 +51,8 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_576ct")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1099552614]
-scale = Vector2(0.3, 0.3)
+position = Vector2(1.1920929e-07, -7.0000005)
+scale = Vector2(0.97205883, 1.0341314)
 sprite_frames = SubResource("SpriteFrames_cuuvt")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,6 +1,17 @@
 extends Area2D
 
 const DRAGGABLE_TRASH = preload("uid://d1yde7lsrkd5d")
+@onready var master_button: Button = $"../CanvasLayer/reset"
+
+
+func _physics_process(_delta: float) -> void:
+	var trash_on_game = self.get_child_count()
+	if trash_on_game <= 1:
+		master_button.visible = true
+		master_button.disabled = false
+	else:
+		master_button.visible = false
+		master_button.disabled = true
 
 func _ready() -> void:
 	for item in	GameManager.type:

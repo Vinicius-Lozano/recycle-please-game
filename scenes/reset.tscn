@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c25jmpjk4gx0a"]
+
+[ext_resource type="Script" uid="uid://ciydm77eoxu6" path="res://reset.gd" id="1_56cnf"]
+
+[node name="reset" type="Button" unique_id=25716366]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_56cnf")

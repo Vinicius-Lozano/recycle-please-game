@@ -43,10 +43,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	handle_death()
 	move_and_slide()
-
-func handle_death() -> void:
-	if global_position.y > 1000:
-		print('fall')
-		global_position = initial_pos

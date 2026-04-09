@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bhpyrcpmo6h2n"]
+
+[ext_resource type="Script" uid="uid://s2xuhfiw4jbr" path="res://area_2d.gd" id="1_jughj"]
+
+[node name="Area2D" type="Area2D" unique_id=1887471780]
+script = ExtResource("1_jughj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1397995173]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

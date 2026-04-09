@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 20.0
+@export var speed: float = 60.0
 @export var player: CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -18,8 +18,3 @@ func _physics_process(delta: float) -> void:
 		sprite.animation = 'walk'
 	else:
 		sprite.animation = 'default'
-
-
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	if body == player:
-		body.queue_free()

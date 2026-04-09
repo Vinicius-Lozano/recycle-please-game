@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://da0wskxdvojax" path="res://scripts/ferruge.gd" id="1_fvjqx"]
 [ext_resource type="Texture2D" uid="uid://cfmcd6y27k5m5" path="res://sprites/Ferruge idle.png" id="2_6iyi7"]
 [ext_resource type="Texture2D" uid="uid://b5paea12rweb0" path="res://sprites/Ferruge_walk.png" id="3_6iyi7"]
+[ext_resource type="PackedScene" uid="uid://bhpyrcpmo6h2n" path="res://scenes/killzone2.tscn" id="4_2c25t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c25t"]
 atlas = ExtResource("2_6iyi7")
@@ -147,14 +148,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 7.0
+"speed": 60.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyi7"]
-size = Vector2(33, 35)
+size = Vector2(33, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2c25t"]
-radius = 29.017237
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqxig"]
+radius = 34.0
 
 [node name="Ferruge" type="CharacterBody2D" unique_id=1843820829]
 script = ExtResource("1_fvjqx")
@@ -167,13 +168,11 @@ autoplay = "default"
 frame_progress = 0.7594322
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=508578118]
-position = Vector2(-5.5, 6.5)
+position = Vector2(-6.5, 14)
 shape = SubResource("RectangleShape2D_6iyi7")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1288431291]
+[node name="Area2D" parent="." unique_id=1887471780 instance=ExtResource("4_2c25t")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=17205570]
-position = Vector2(-3, 0)
-shape = SubResource("CircleShape2D_2c25t")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1566033509]
+position = Vector2(-7, 0)
+shape = SubResource("CircleShape2D_fqxig")

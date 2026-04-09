@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bn73xxrdlib4p" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bemuo8m7judw0" path="res://sprites/tampinha.png" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://6gjarj842iks" path="res://scenes/thrash_counter_ui.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://dyrc781ghi40l" path="res://scripts/master_button.tscn" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(18.628838, 18.627161)
+size = Vector2(18.628838, 13.976872)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -57,7 +59,7 @@ floor_snap_length = 1.5
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821973958]
-position = Vector2(-1, -8.662635)
+position = Vector2(-1, -6.4999995)
 scale = Vector2(0.5869906, 0.9301079)
 shape = SubResource("RectangleShape2D_g2els")
 
@@ -70,3 +72,10 @@ animation = &"jump"
 position = Vector2(0, -8)
 limit_bottom = 300
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=642077330]
+
+[node name="ThrashCounterUI" parent="CanvasLayer" unique_id=1194732144 instance=ExtResource("3_qhqgy")]
+
+[node name="MasterButton" parent="CanvasLayer" unique_id=623200087 instance=ExtResource("4_dqkch")]
+where = "uid://hdqd673f5n5g"

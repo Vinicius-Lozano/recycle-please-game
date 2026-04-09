@@ -24,3 +24,15 @@ func add_point():
 	points += 1
 	point_added.emit()
 	print(points)
+
+func reset_state() -> void:
+	# Zeramos os pontos e estados globais
+	points = 0
+	IS_DRAGGING = null
+	player_move_block = false
+	
+	# Passamos por cada tipo de lixo e zeramos a quantidade coletada
+	for item in type:
+		item['quantity'] = 0
+		
+	print("GameManager completamente resetado!")
